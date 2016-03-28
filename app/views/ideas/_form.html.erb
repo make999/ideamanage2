@@ -1,0 +1,4 @@
+<% form_for(@challenge, @challenge.ideas.build)   do |f|%>
+  <%= f.text_field :title, placeholder: "Title of New Idea" %>
+  <%= f.text_field :content, placeholder: "Describe your idea"%>
+<% end %>
