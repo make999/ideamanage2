@@ -21,8 +21,10 @@
         <td><%= challenge.begin_period %></td>
         <td><%= challenge.end_period %></td>
         <td><%= link_to 'Show', challenge %></td>
-        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
-        <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if challenge.user == current_user %>
+          <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
+          <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
