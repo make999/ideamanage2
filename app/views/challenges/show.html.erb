@@ -20,5 +20,12 @@
   <%= @challenge.end_period %>
 </p>
 
+<div id="ideas_wrapper">
+  <%= render @challenge.ideas%>
+  <div id="form">
+    <%= render "ideas/form"%>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 <%= link_to 'Back', challenges_path %>

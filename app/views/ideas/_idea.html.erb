@@ -1,0 +1,4 @@
+<p>
+  <%= idea.content %>
+</p>
+<%= link_to "Delete", challenge_idea_path(@challenge, idea.id), method: :delete, data: {confirm: "Are you sure?" } %>

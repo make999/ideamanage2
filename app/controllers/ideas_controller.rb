@@ -6,6 +6,17 @@ class IdeasController < ApplicationController
     redirect_to @challenge
   end
 
+  def destroy
+    @idea = @challenge.ideas.find(params[:id])
+    if @idea.destroy
+      flash[:success] = "Idea was deleted."
+    else
+      flash[:error] = "Idea could not be deleted."
+    end
+
+    redirect_to @challenge
+  end
+
   private
 
   def set_challenge
@@ -13,10 +24,7 @@ class IdeasController < ApplicationController
   end
 
   def idea_params
-    params[:idea].permit(:title, :description)
+    params[:idea].permit(:title, :content)
   end
-
-
-
 
 end
