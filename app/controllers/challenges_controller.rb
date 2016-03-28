@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /challenges
   # GET /challenges.json
@@ -69,6 +70,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:title, :description, :begin_period, :end_period)
+      params.require(:challenge).permit(:title, :description, :begin_period, :end_period, :image)
     end
 end

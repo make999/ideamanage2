@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= render 'layouts/header'%>
   <% flash.each do |name, msg|%>
     <%= content_tag(:div, msg, class: "alert alert-#{name}")%>
   <% end %>
 
-  <% if user_signed_in?%>
+  <!-- <% if user_signed_in?%>
     <ul>
       <li> <%= link_to "Submit the Challenge", new_challenge_path %> </li>
       <li> <%= link_to "Account", edit_user_registration_path %></li>
@@ -24,7 +24,7 @@
       <li> <%= link_to "Sign In", new_user_session_path %></li>
     </ul>
 
-  <% end %>
+  <% end %> -->
 
 <%= yield %>
 

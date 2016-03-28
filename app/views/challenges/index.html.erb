@@ -16,6 +16,7 @@
   <tbody>
     <% @challenges.each do |challenge| %>
       <tr>
+        <td><%= image_tag challenge.image.url(:medium)%></td>
         <td><%= challenge.title %></td>
         <td><%= challenge.description %></td>
         <td><%= challenge.begin_period %></td>

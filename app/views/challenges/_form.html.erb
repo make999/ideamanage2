@@ -1,4 +1,4 @@
-<%= form_for(@challenge) do |f| %>
+<%= form_for @challenge, html: {multipart: true}  do |f| %>
   <% if @challenge.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
@@ -26,6 +26,10 @@
   <div class="field">
     <%= f.label :end_period %><br>
     <%= f.date_select :end_period %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="actions">
     <%= f.submit %>
