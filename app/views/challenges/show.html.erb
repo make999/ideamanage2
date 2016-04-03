@@ -1,31 +1,33 @@
-<%= image_tag @challenge.image.url(:medium) %>
+<div id="post_content">
 
-<p>
-  <strong>Title:</strong>
-  <%= @challenge.title %>
-</p>
+  <%= image_tag @challenge.image.url(:medium) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @challenge.description %>
-</p>
+  <p class="title">
+    <strong>Title:</strong>
+    <%= @challenge.title %>
+  </p>
 
-<p>
-  <strong>Begin period:</strong>
-  <%= @challenge.begin_period %>
-</p>
+  <p class="body">
+    <strong>Description:</strong>
+    <%= @challenge.description %>
+  </p>
 
-<p>
-  <strong>End period:</strong>
-  <%= @challenge.end_period %>
-</p>
+  <p class="date">
+    <strong>Begin period:</strong>
+    <%= @challenge.begin_period %>
+    <strong>End period:</strong>
+    <%= @challenge.end_period %>
+  </p>
 
-<div id="ideas_wrapper">
   <%= render @challenge.ideas%>
-  <div id="form">
-    <%= render "ideas/form"%>
-  </div>
-</div>
+  <%= render "ideas/form"%>
 
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+  <p>
+    <div id="buttons">
+      <button class="button"><%= link_to 'Edit', edit_challenge_path(@challenge) %></button>  |
+      <button class="button"><%= link_to 'Back', challenges_path %></button>
+    </div>
+  </p>
+
+
+</div>
